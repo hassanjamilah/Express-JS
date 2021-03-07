@@ -16,6 +16,21 @@ app.get('/', (req, response) => {
 });
 
 
+// JSON data
+//{"Hello":"Json is good"}
+//URLEncode:
+//heelo=Json+is+good
+
+//Method to use json
+app.use(express.json);
+app.use(express.urlencoded({extended:true});
+app.post('/newItem1', (req, resp) => {
+   console.log(req.body);
+   resp.send('Hello');
+});
+
+
+
 app.get('/item/:id', (request, response, next) => {
    //Middleware
    console.log('The id is: ', request.params.id);
