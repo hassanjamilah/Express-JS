@@ -30,6 +30,16 @@ app.get('/item/:id', (request, response, next) => {
 
 );
 
+app.get('/item', (request, response) => {
+   //response.end(); // ends the response
+   //response.redirect('https://www.google.com');
+   //response.download('images/rocket.jpg');
+
+
+
+});
+
+
 app.get('/item/:category/:id', (request, response) => {
    console.log('The id is: ', request.params.id);
    let userID = Number(request.params.id);
