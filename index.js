@@ -49,7 +49,21 @@ app.get('/item/:category/:id', (request, response) => {
 
 });
 
-app.post('/newItem', (req, response) => {
+app.route('/item')
+    .get((req, res) => {
+
+})
+    .put((request, response) => {
+
+    })
+    .post((req, res)=> {
+
+    })
+    .delete((req, resp)=> {
+
+    });
+
+app.post('/item', (req, response) => {
    response.send(`This is a post to newItem on port ${PORT}`);
 });
 
