@@ -21,12 +21,16 @@ app.get('/', (req, response) => {
 //URLEncode:
 //heelo=Json+is+good
 
-//Method to use json
-app.use(express.json);
-app.use(express.urlencoded({extended:true});
-app.post('/newItem1', (req, resp) => {
-   console.log(req.body);
-   resp.send('Hello');
+// //Method to use json
+// app.use(express.json);
+// app.use(express.urlencoded({extended:true});
+
+
+app.get('/item1', (req, resp) => {
+   // console.log(req.body);
+   // resp.send('Hello');
+   throw new Error();
+
 });
 
 
@@ -96,6 +100,13 @@ app.put('/item' , (req, response)=>{
 
 app.delete('/item' , (req, response)=>{
    response.send(`This is a delete to deleteItem on port ${PORT}`);
+});
+
+
+// Error handling function
+app.use((err, req, response, next) =>{
+   console.error(err.stack);
+   response.status(500).send(`Red alert ${err.stack}`);
 });
 
 app.listen(PORT, ()=>{
