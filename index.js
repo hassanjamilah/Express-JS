@@ -1,12 +1,17 @@
-import express from 'express'
-import data from './data/data.json'
+import express from 'express';
+import favicon from 'serve-favicon';
+import path from 'path'
+import data from './data/data.json';
+
 
 const app = express();
 const PORT=3000;
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
-app.use('/images', express.static('images'))
+app.use('/images', express.static('images'));
+
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 
 app.get('/', (req, response) => {
    //get data first
