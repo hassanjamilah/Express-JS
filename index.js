@@ -17,10 +17,17 @@ app.get('/', (req, response) => {
 
 
 app.get('/item/:id', (request, response, next) => {
+   //Middleware
    console.log('The id is: ', request.params.id);
    let userID = Number(request.params.id);
    let user = data[userID];
    console.log("The user data is:" , user);
+   //middleware that uses the request object
+   console.log(`Request from ${request.originalUrl}`);
+   console.log(`Request type: ${request.method}`);
+
+   //end of middleware
+
    response.send(user);
    next();
 },
