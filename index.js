@@ -4,6 +4,9 @@ import data from './data/data.json'
 const app = express();
 const PORT=3000;
 
+app.use(express.static('public'))
+
+app.use('/images', express.static('images'))
 
 app.get('/', (req, response) => {
    //get data first
