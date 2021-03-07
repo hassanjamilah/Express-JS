@@ -6,9 +6,10 @@ const PORT=3000;
 
 
 app.get('/', (req, response) => {
+   //get data first
 
+   response.json(data);
 
-///   response.send(`a get request with / route on port ${PORT}`);
 });
 
 app.post('/newItem', (req, response) => {
@@ -18,6 +19,7 @@ app.post('/newItem', (req, response) => {
 app.put('/item' , (req, response)=>{
    response.send(`This is a put to updateItem on port ${PORT}`);
 });
+
 
 app.delete('/item' , (req, response)=>{
    response.send(`This is a delete to deleteItem on port ${PORT}`);
