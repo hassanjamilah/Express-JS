@@ -15,6 +15,16 @@ app.get('/', (req, response) => {
 
 });
 
+
+app.get('/item/:id', (request, response) => {
+   console.log('The id is: ', request.params.id);
+   let userID = Number(request.params.id);
+   let user = data[userID];
+   console.log("The user data is:" , user);
+   response.send(user);
+
+});
+
 app.post('/newItem', (req, response) => {
    response.send(`This is a post to newItem on port ${PORT}`);
 });
