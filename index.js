@@ -1,0 +1,17 @@
+import express from 'express'
+import data from './data/data.json'
+
+const app = express();
+const PORT=3000;
+
+
+app.get('/', (req, response) => {
+   response.send(`a get request with / route on port ${PORT}`);
+});
+
+app.listen(PORT, ()=>{
+   console.log(`run on server port ${PORT}`);
+   console.log(data);
+});
+
+
