@@ -9,6 +9,8 @@ const PORT=3000;
 
 app.use(express.static('public'));
 
+
+
 app.use('/images', express.static('images'));
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
